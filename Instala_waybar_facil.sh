@@ -39,8 +39,9 @@ echo "Se ha creado un archivo de texto en tus documentos donde podras conocer la
 cp -r README/Funciones.txt ~/Documentos
 
 echo "Lo encontraras en tu carpeta de Documentos en la carpeta README"
-
+;;
 2)
+
 echo "Instalamos yay"
 
 sudo pacman --noconfirm -S --needed base-devel git
@@ -82,3 +83,5 @@ cp -r README/Funciones.txt ~/Documentos
 echo "Lo encontraras en tu carpeta de Documentos en la carpeta README"
 
 
+;;
+esac
