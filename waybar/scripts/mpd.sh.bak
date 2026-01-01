@@ -1,0 +1,24 @@
+#!/bin/bash
+
+status=$(mpc status 2>/dev/null)
+
+# Si MPD no está corriendo o está detenido → no mostrar nada
+if [[ -z "$status" ]] || echo "$status" | grep -q "\[stopped\]"; then
+  exit 0
+fi
+
+song=$(mpc -f "%title% - %artist%" current)
+state=$(echo "$status" | grep -o "\[.*\]" | tr -d '[]')
+
+case "$state" in
+playing)
+  icon="󰎆 "
+  class="playing"
+  ;;
+paused)
+  icon="󰏤"
+  class="paused"
+  ;;
+esac
+
+echo "{\"text\":\"$icon  $song\",\"class\":\"$class\"}"
