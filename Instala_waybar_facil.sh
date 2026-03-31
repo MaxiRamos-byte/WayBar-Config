@@ -46,9 +46,6 @@ echo "Comenzando con la instalacion de waybar (Ya incluye un tema)"
 
 sudo pacman --noconfirm -S waybar
 
-echo "Ya instalado se ejecuta para una configuracion inicial"
-waybar &
-
 echo "Instalaremos las dependencias necesarias para su correcto funcionamiento"
 
 sudo pacman --noconfirm -S wlogout
@@ -59,15 +56,8 @@ echo "Instalamos las fuentes necesarias"
 
 yay --noconfirm -S ttf-jetbrains-mono-nerd
 
-echo "Cerramos waybar"
-
-pkill waybar
-
 echo "Procedemos a copiar la configuracion a la carpeta necesaria"
 cp -r waybar ~/.config
-
-echo "volvemos a iniciar waybar"
-waybar &
 
 echo "Se ha creado un archivo de texto en tus documentos donde podras conocer las funciones de los dots"
 cp -r README/Funciones.txt ~/Documentos
